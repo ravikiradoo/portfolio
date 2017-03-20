@@ -1,0 +1,386 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/bootstrap-social.css" rel="stylesheet">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="portfolio.css" id="Css">
+<link rel="stylesheet" href="css/slit-slider.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" type="text/css" href="animation.css">
+<link href='//fonts.googleapis.com/css?family=League Script' rel='stylesheet'>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+ <script src="js/modernizr-2.6.2.min.js"></script>
+<title>Ravi Kiradoo</title>
+<script>
+	$(document).ready(function(){
+		$("#contact").hide();
+		$("#myWork").hide();
+    $("#myResume").hide();
+		$("#Home").click(function(){
+         $("#Css").attr('href',"portfolio.css");
+         $("#contact").hide();
+         $("#myWork").hide();
+          $("#HOME").show();
+           $("#myResume").hide();
+
+		});
+		$("#AboutMe").click(function(){
+			 
+          $("#Css").attr("href","About.css");
+           $("#contact").hide();
+           $("#myWork").hide();
+            $("#HOME").hide();
+             $("#myResume").show();
+		});
+		$("#MyWork").click(function(){
+           $("#Css").attr("href","myWork.css");
+            $("#contact").hide();
+             $("#HOME").hide();
+            $("#myWork").show();
+             $("#myResume").hide();
+		});
+		$("#Contact").click(function(){
+             $("#Css").attr("href","Contact.css");
+              $("#contact").show();
+              $("#myWork").hide();
+               $("#HOME").hide();
+                $("#myResume").hide();
+		});
+
+    
+
+ 
+    $('[data-toggle="popover"]').popover();   
+
+    $("#form").submit(function(){
+      $.ajax({
+      url:"message.php",
+      type: "POST",             
+      data: new FormData(this), 
+      contentType: false,      
+      cache: false,            
+      processData:false,        
+success: function(data)   
+{
+  if(data=='fail')
+
+alert('Your message has failed to sent.');
+if(data=='pass')
+{
+alert('Your message has successfully sent.')
+}
+}
+      });
+      return false;
+
+    });
+
+    
+
+
+	});
+</script>
+<style type="text/css">
+  #ravi {
+    font-family: 'League Script';font-size: 22px;
+}
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin: 10px;
+}
+
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+a{
+  text-decoration: none;
+}
+
+</style>
+
+</head>
+<body >
+
+   <nav class="navbar navbar-transparent animated-header " style="margin:10px;">
+	<div class="container-fluid">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+       <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+      </button>
+    <a class="navbar-brand" href="index.html" style="font-size:30px;" id="ravi">Ravi Shankar Kiradoo<br/><center><span style="font-size:20px;color:rgb(50,50,250)">Software Engineer</span></center></a>
+    </div>	
+	<div class="collapse navbar-collapse" id="Navbar">
+      <ul class="nav navbar-nav navbar-right" id="navLink" >
+        <li ><a href="#" class="button" id="Home">Home</a></li>
+        <li><a href="#" class="button" id="AboutMe">My Resume</a></li>
+        <li><a href="#" class="button"id="MyWork">My Work</a></li> 
+        <li><a href="#" class="button"id="Contact">Contact Me</a></li> 
+      </ul>
+      </div>
+      </div>
+</nav>
+<div  class="container-fluid" id="contact">
+
+<div class="row" id="ContactForm">
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-4" ></div>
+<div class="col-xs-12 col-sm-4 col-md-4" >
+ <form class="form-inline-block" role="form" id="form" class="form" method="post">
+  <div class="form-group">
+  	<label for="name" style="font-size:20px;color:red"> Name</label>
+  	<input type="text" class="form-control" name="name" id="name" class="form" placeholder="Name" required>
+  </div>
+  <div class="form-group">
+    <label for="email" style="font-size:20px;color:red"> Email address</label>
+    <input type="text" class="form-control" id="email" name="email" class="form" placeholder="Email" required>
+  </div>
+    <div class="form-group">
+    <label for="mobile" style="font-size:20px;color:red"> Mobile Number</label>
+    <input type="text" class="form-control" id="mobile" name="mobile" class="form" placeholder="Mobile Number" required>
+  </div>
+   <div class="form-group">
+    <label for="message" style="font-size:20px;color:red"> Message</label>
+    <textarea name="comment" class="form-control" form="usrform" class="form"  required >Enter text here...</textarea>
+  </div>
+
+</form>
+<center><button type="submit" form="form" id="button" class="button">Send</button></center>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-4" ></div>
+</div>
+<div class="row">
+<footer class="row-footer">
+	<div class="container">
+		<div class="row" style="padding:60px;">
+		    <div class="col-xs-12 col-sm-4 col-md-4"></div>
+			
+			<div class="col-xs-12 col-sm-1 col-md-1">
+				<a href="https://www.facebook.com/ravi.kiradoo.1" target="_blank"><img src="facebook.png" width="60px" height="70px"></a>
+			</div>
+			<div class="col-xs-12 col-sm-1 col-md-1">
+				<a href="https://www.linkedin.com/in/ravi-kiradoo" target="_blank"><img src="linkidin.png" width="70px" height="80px"></a>
+			</div>
+			<div class="col-xs-12 col-sm-1 col-md-1" style="margin-top:20px;">
+				<a href="mailto:kiradooravi@gmail.com" target="_blank"><img src="Email.png" width="50px" height="40px"></a>
+			</div>
+			<div class="col-xs-12 col-sm-1 col-md-1" style="margin-top:20px;">
+				<a href="https://github.com/ravikiradoo" target="_blank"><img src="Git.png" width="50px" height="30px;"></a>
+			</div>
+			
+		</div>
+	</div>
+</footer>
+</div>
+</div>
+
+</div>
+</div>
+
+<div id="myWork" class="container-fluid" >
+	<div class="row" >
+	<div class= "col-xs-12 col-sm-12 col-md-12"><center><h1 id="webWork">Web Developement Work </h1></center></div>
+	<div class="col-xs-12 col-sm-6 col-md-6">
+	<div class="panel-group">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+    <h2 class="panel-title" style="margin-bottom:20px"><center>Prayshala</center></h2>
+    <img src="prayashala.jpeg" style="width:100%;height:100% ">
+    <center><button data-toggle="collapse" href="#collapse1" class="MoreInfo">MoreInfo</button><center>
+    </div>
+    <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
+      	<p>This project is a website for online examination.we gave it a beautiful name "Prayashala" which means place for practice.
+      	Purpose of this website is to provide  a platform for small educational institutions which do not have their own website or a platform where they can conduct online examinations for their students.It also give the facility of advertisement of their institution.It will provide them facility like a mini website , where students can found their institute and can see their test paper ,facality members ,their previous achivements in their field etc.</br>
+      	Live Link for the project <a href="http//:www.prayashala.000webhostapp.com"> http:www.prayashala.000webhostapp.com</a>
+      	</p>
+    </div>
+    <div class="panel-footer"></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6">
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading" style="padding-bottom:30px;">
+<h2 class="panel-title" style="margin-bottom:20px" ><center>Free Weather App</center></h2>
+<img src="weather.jpeg" style="width:100%;height:100%">
+<center><button data-toggle="collapse" href="#collapse2" class="MoreInfo" style="margin-top:30px;">MoreInfo</button><center>
+</div>
+<div id="collapse2" class="panel-collapse collapse">
+<div class="panel-body">
+ <p>
+  Free weather app is online website for weather information.I desigend it with angular js and javascript for data handling.</br>
+      		Live Link for the project <a href="http//:www.weathapp.000webhostapp.com"> http:www.weathapp.000webhostapp.com</a>
+</p>
+</div>
+<div class="panel-footer"></div>
+</div>
+ </div>
+</div>
+</div>
+</div>
+<div class="row" >
+<div class= "col-xs-12 col-sm-12 col-md-12"><center><h1 id="AndroidWork">Android Work</h1></center></div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+		 <div class="panel-group">
+         <div class="panel panel-default">
+         <div class="panel-heading">
+         <h2 class="panel-title" style="margin-bottom:20px"><center>Anagram Game</center></h2>
+         <div class="row">
+         	<div class="col-xs-12 col-sm-6 col-md-6">
+         		 <img src="anagram1.png" style="width:100%;height:100% ">
+         	</div>
+         	<div class="col-xs-12 col-sm-6 col-md-6">
+         		 <img src="anagram2.png" style="width:100%;height:100% ">
+         	</div>
+         </div>
+        
+
+        <center><button data-toggle="collapse" href="#collapse3" class="MoreInfo">MoreInfo</button><center>
+    </div>
+    <div id="collapse3" class="panel-collapse collapse">
+     <div class="panel-body">
+      	<p>
+      		Anagram is an Android Game Application.I developed this during  android with applied cs course.
+      		In this game computer genrates a word and user have to make another word by adding one more letter and with another combinations of letters.
+      	</p>
+  </div>
+ <div class="panel-footer"></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6">
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading" >
+ <h2 class="panel-title" style="margin-bottom:20px" ><center>Dice Game</center></h2>
+ <div class="row">
+ <div class="col-xs-12 col-sm-6 col-md-6">
+  <img src="DiceGame1.png" style="width:100%;height:100% ">
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+   <img src="DiceGame2.png" style="width:100%;height:100% ">
+   </div>
+  </div>
+ <center><button data-toggle="collapse" href="#collapse4" class="MoreInfo" >MoreInfo</button><center>
+    </div>
+<div id="collapse4" class="panel-collapse collapse">
+ <div class="panel-body">
+      	<p>Scarne’s Dice is a turn-based dice game where players score points by rolling a die and then:</br>
+if they roll a 1, score no points and lose their turn </br>
+if they roll a 2 to 6:add the rolled value to their points</br>
+choose to either reroll or keep their score and end their turn.
+The winner is the first player that reaches (or exceeds) 100 points.
+For example, if a player starts their turn and rolls a 6, they can choose to either ‘hold’
+potentially score more points.
+ Let’s say they decide to roll again, and they get a 4. They now have the option to end
+and end their turn, in which case they can add the 6 to their score, or to reroll and
+their turn and add 10 points (6 + 4) to their score, or to roll again to get even more
+They decide to roll again, but get a 1. Getting a 1 makes the player lose all the points
+from their turn (so their score is the same as before their turn), and finishes their turn
+allowing the second player to begin their turn.
+This goes on until one of the players reaches 100 points or more.</p>
+</br>
+</div>
+<div class="panel-footer"></div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div  id="HOME">
+<div  id="myIntro">
+ <div class="container" style="background:rgb(200,200,200);padding:50px;border-radius:20px" id="About">
+<div class="row">
+<div class="col-xs-12 col-sm-3 col-md-3">
+<figure>
+  <img src="Ravi.png" style="border-radius:20px" >
+  <figcaption> <center>Ravi Shankar Kiradoo<br>Software Engineer</center></figcaption>
+  </figure>
+</div>
+<div class="col-xs-12 col-sm-2 col-md-2"></div>
+<div class="col-xs-12 col-sm-7 col-md-7">
+<h1>About Me</h1>
+  <p>
+    I am in search of my career starting point as a software developer, have a lot of motivation and passion for programming so as to learning new technologies. Currently I am developing projects in Website and Android Application area and brazzing my knowledge and skills.
+
+  </p>
+  <p>Currently, I'm pursuing B.Tech(Computer Science) from Indian Institute of Information Technology,Vadodara. I enjoy learning new things, I am always searching a new way to make the code more efficient and lite.
+
+</p>
+ <p>Thank You very much !</p>
+
+ </p>
+</div>
+</div>
+ </div>
+
+</div>
+
+</div>
+<div class="container-fluid" id="myResume">
+<div class="row">
+  <div class="col-xs-12 col-sm-3 col-md-3"></div>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="Education.jpg" alt="Education" style="height:500px;width:600px">
+            <div class="carousel-caption">
+        <h3>Education</h3>
+        </div>
+    </div>
+
+    <div class="item">
+      <img src="skill.png" alt="Skill" style="height:500px;width:600px">
+      <div class="carousel-caption">
+        <h3>Skills</h3>
+        </div>
+    </div>
+
+</div>
+
+  </div>
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-3">     
+
+</div>
+ 
+</div>
+</div>
+
+    
+</body>
+</html>

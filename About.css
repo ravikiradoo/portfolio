@@ -1,0 +1,22 @@
+#navLink
+{
+	margin: 10px;
+	margin-right: 50px;
+	font-size: 20px;
+}
+#logo
+{
+	width: 200px;
+	height: 200px;
+}
+
+
+a{
+	color: black;
+}
+#myResume
+{   
+	
+	background-color: rgb(200,20,20);
+	padding: 20px;
+}
